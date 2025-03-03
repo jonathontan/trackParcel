@@ -69,6 +69,8 @@ jobs:
           git config --global user.email 'actions@github.com'
           git checkout --orphan gh-pages
           git reset
-          git add dist -f
-          git commit -m "Deploy updated build to gh-pages"
-          git push --force origin gh-pages
+          mv dist/* .
+          rm -rf dist
+          git add . -f
+          git status
+
