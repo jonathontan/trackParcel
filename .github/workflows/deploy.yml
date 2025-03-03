@@ -71,6 +71,5 @@ jobs:
           git reset
           mv dist/* .
           rm -rf dist
-          git add . -f
           git status
 
