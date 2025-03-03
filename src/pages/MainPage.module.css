@@ -1,0 +1,37 @@
+/* .container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+}

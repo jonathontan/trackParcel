@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow: hidden;
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow-x: hidden;
+    overflow-y: auto;
+    gap: 1rem;
+  }
+}
+
+.box-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 80%;
+  height: auto;
+  border-radius: 15px;
+  background-color: rgb(36, 36, 36);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .status-container {
+    display: flex;
+    justify-content: space-between;
+
+    .status {
+      padding: 10px 20px;
+      height: fit-content;
+      border-radius: 30px;
+      background-color: #3f3f3f;
+    }
+  }
+
+  .stepper-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-content: center;
+    justify-content: space-evenly;
+    min-height: 300px;
+  }
+
+  .box {
+    padding: 1rem;
+    align-items: end;
+  }
+
+  .customIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+  }
+
+  .select-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    & .inputs {
+      display: inherit;
+      flex: 1;
+      gap: 1rem;
+    }
+  }
+}

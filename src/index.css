@@ -1,0 +1,35 @@
+:root {
+  --webGreen: #00ff00;
+  --webWhite: #ffffff;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+body {
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #D0D5DD;
+  border-radius: 18px;
+}
