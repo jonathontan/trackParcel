@@ -2,7 +2,7 @@
   "name": "trackParcel",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://jonathontan.github.io/trackParcel",
+  "homepage": "https://jonathontan.github.io/trackParcel/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
