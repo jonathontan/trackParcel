@@ -1,12 +1,12 @@
 {
-  "name": "react-vite-redux-template",
-  "private": true,
+  "name": "trackParcel",
+  "private": false,
   "version": "0.0.0",
-  "homepage": "https://jonathontan.github.io/trackparcel",
+  "homepage": "https://jonathontan.github.io/trackParcel",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite --force",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
