@@ -72,5 +72,5 @@ jobs:
           cp -r dist/* temp_dist/
           mv temp_dist/* .
           rm -rf temp_dist
-          git add dist
+          git add dist -f
           git status
