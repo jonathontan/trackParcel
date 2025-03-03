@@ -56,6 +56,9 @@ jobs:
           # Upload dist folder
           path: './dist'
 
+      - name: List contents of dist folder
+        run: ls -al ./dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
