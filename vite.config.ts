@@ -9,5 +9,5 @@ export default defineConfig({
     importMetaEnv.vite({ example: ".env.example" }),
     nodePolyfills({ include: ["timers"] })
   ],
-  base: "/trackParcel",
+  base: "/trackparcel/",
 })

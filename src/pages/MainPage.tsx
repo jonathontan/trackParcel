@@ -1,18 +1,18 @@
 import { Icon } from "@iconify/react";
 import { Button, Fade, InputAdornment, TextField, Typography } from "@mui/material";
 import { enqueueSnackbar } from "notistack";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { useAppDispatch } from "../app/hooks";
 import { fetchJob, fetchSheet, fetchSheetId } from "../app/jobSlice";
-import Faq from "../components/Faq";
+// import Faq from "../components/Faq";
 import colors from "../styles/colors";
 import styles from "./MainPage.module.css";
 
 function MainPage() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const faqRef = useRef<HTMLDivElement | null>(null)
+  // const faqRef = useRef<HTMLDivElement | null>(null)
   const [searchText, setSearchText] = useState<string>("")
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -169,9 +169,9 @@ function MainPage() {
           </div>
         </div>
 
-        <div id="faq" ref={faqRef} className={styles.section}>
+        {/* <div id="faq" ref={faqRef} className={styles.section}>
           <Faq />
-        </div>
+        </div> */}
       </div>
     )
   )
