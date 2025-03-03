@@ -1,5 +1,5 @@
-const baseUrl = import.meta.env.APP_ORCA_SERVICE
-const apiKey = import.meta.env.APP_ORCA_API_KEY
+const baseUrl = import.meta.env.VITE_ORCA_SERVICE
+const apiKey = import.meta.env.VITE_ORCA_API_KEY
 
 function getAllSheets() {
   const relativeUrl = 'sheets'

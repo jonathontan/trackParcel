@@ -1,5 +1,5 @@
-const baseUrl = import.meta.env.APP_DETRACK_SERVICE
-const apiKey = import.meta.env.APP_DETRACK_API_KEY
+const baseUrl = import.meta.env.VITE_DETRACK_SERVICE
+const apiKey = import.meta.env.VITE_DETRACK_API_KEY
 
 function getJob(doNumber: string) {
   let relativeUrl = 'jobs/show/'

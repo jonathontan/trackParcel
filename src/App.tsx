@@ -1,15 +1,15 @@
 
-import { Navigate, RouterProvider, createHashRouter } from 'react-router'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router'
 import './App.css'
 import NavbarWrapper from './components/NavbarWrapper'
 import JobPage from './pages/JobPage'
 import MainPage from './pages/MainPage'
 
 function App() {
-  const routes = createHashRouter(
+  const routes = createBrowserRouter(
     [
       {
-        path: "",
+        path: "/trackparcel/",
         //element: <ProtectedRoute/> if user login exists
         //errorElement: <ErrorPage />
         children: [
