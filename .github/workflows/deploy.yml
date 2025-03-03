@@ -73,4 +73,5 @@ jobs:
           mv temp_dist/* .
           rm -rf temp_dist
           git add dist -f
-          git status
+          git commit -m "Deploy updated build to gh-pages"
+          git push --force origin gh-pages
