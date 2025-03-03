@@ -7,7 +7,7 @@ const navigationItems: {
 }[] = [
     {
       label: "TRACK PARCEL",
-      href: "/"
+      href: "/trackparcel"
     },
     {
       label: "CAN'T FIND YOUR AWB",
