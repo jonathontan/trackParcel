@@ -31,8 +31,8 @@ jobs:
         env:
           VITE_DETRACK_API_KEY: ${{ secrets.VITE_DETRACK_API_KEY }}
           VITE_ORCA_API_KEY: ${{ secrets.VITE_ORCA_API_KEY }}
-          VITE_DETRACK_SERVICE: ${{ secrets.VITE_DETRACK_SERVICE }}
-          VITE_ORCA_SERVICE: ${{ secrets.VITE_ORCA_SERVICE }}
+          VITE_DETRACK_SERVICE: ${{ env.VITE_DETRACK_SERVICE }}
+          VITE_ORCA_SERVICE: ${{ env.VITE_ORCA_SERVICE }}
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
