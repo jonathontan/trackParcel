@@ -44,13 +44,9 @@ jobs:
           VITE_ORCA_API_KEY: ${{ secrets.VITE_ORCA_API_KEY }}
           VITE_DETRACK_SERVICE: ${{ secrets.VITE_DETRACK_SERVICE }}
           VITE_ORCA_SERVICE: ${{ secrets.VITE_ORCA_SERVICE }}
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload dist repository
-          path: './dist'
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages
+        folder: dist
