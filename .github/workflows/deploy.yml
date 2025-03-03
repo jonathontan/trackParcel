@@ -29,6 +29,9 @@ jobs:
         run: |
           echo "VITE_DETRACK_API_KEY=${{ secrets.VITE_DETRACK_API_KEY }}" >> .env
           echo "VITE_ORCA_API_KEY=${{ secrets.VITE_ORCA_API_KEY }}" >> .env
+          echo "${{ env.super_secret }}"
+          echo "${{ secrets.SuperSecret }}"
+          echo "${{ secrets }}"
 
       - name: Build Vite App
         run: npm run build
