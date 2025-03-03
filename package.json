@@ -1,6 +1,6 @@
 {
   "name": "trackParcel",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
   "homepage": "https://jonathontan.github.io/trackParcel",
   "type": "module",

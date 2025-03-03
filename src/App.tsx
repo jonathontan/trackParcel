@@ -1,12 +1,12 @@
 
-import { Navigate, RouterProvider, createBrowserRouter } from 'react-router'
+import { Navigate, RouterProvider, createHashRouter } from 'react-router'
 import './App.css'
 import NavbarWrapper from './components/NavbarWrapper'
 import JobPage from './pages/JobPage'
 import MainPage from './pages/MainPage'
 
 function App() {
-  const routes = createBrowserRouter(
+  const routes = createHashRouter(
     [
       {
         path: "",
