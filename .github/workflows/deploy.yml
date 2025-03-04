@@ -74,4 +74,6 @@ jobs:
           git add index.html -f
           git add vite.svg -f
           git status
+          git commit -m 'Deployed to gh-pages'
+          git push origin gh-pages -f
 
