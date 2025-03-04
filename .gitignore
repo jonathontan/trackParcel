@@ -24,4 +24,6 @@ vol
 *.sln
 *.sw?
 .env
+.env.production
+.env.staging
 .env.local.defaults
