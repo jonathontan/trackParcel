@@ -45,7 +45,8 @@ jobs:
           echo "VITE_ORCA_API_KEY=${{ secrets.VITE_ORCA_API_KEY }}" >> .env
           echo "VITE_DETRACK_SERVICE=${{ secrets.VITE_DETRACK_SERVICE }}" >> .env
           echo "VITE_ORCA_SERVICE=${{ secrets.VITE_ORCA_SERVICE }}" >> .env
-          cat .env
+          echo "VITE_DETRACK_SERVICE=${{ secrets.VITE_DETRACK_SERVICE }}" >> .env.example
+          echo "VITE_ORCA_SERVICE=${{ secrets.VITE_ORCA_SERVICE }}" >> .env.example
 
       - name: Build
         run: npm run build
