@@ -44,8 +44,8 @@ jobs:
         env:
           VITE_DETRACK_API_KEY: ${{ secrets.VITE_DETRACK_API_KEY }}
           VITE_ORCA_API_KEY: ${{ secrets.VITE_ORCA_API_KEY }}
-          VITE_DETRACK_SERVICE: ${{ env.VITE_DETRACK_SERVICE }}
-          VITE_ORCA_SERVICE: ${{ env.VITE_ORCA_SERVICE }}
+          VITE_DETRACK_SERVICE: ${{ secrets.VITE_DETRACK_SERVICE }}
+          VITE_ORCA_SERVICE: ${{ secrets.VITE_ORCA_SERVICE }}
 
       - name: Extract secrets
         run: |
@@ -54,6 +54,7 @@ jobs:
           cat secrets.txt
           echo "VITE_DETRACK_SERVICE=$VITE_DETRACK_SERVICE"
           echo "VITE_DETRACK_SERVICE=${VITE_DETRACK_SERVICE}"
+          echo "VITE_DETRACK_SERVICE=${{VITE_DETRACK_SERVICE}}"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
