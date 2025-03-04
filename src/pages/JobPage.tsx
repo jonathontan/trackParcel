@@ -271,24 +271,33 @@ function JobPage() {
                     }}
                   ></TextField>
                 </div>
-                <Button variant="outlined"
-                  size="small"
-                  onClick={handleUpdate}
-                  sx={{
-                    color: colors.webWhite,
-                    borderColor: colors.webGreen,
-                    padding: '1rem 2rem'
-                  }}>Update
-                </Button>
-                <Button variant="outlined"
-                  size="small"
-                  onClick={handleResetFields}
-                  sx={{
-                    color: colors.webWhite,
-                    borderColor: 'red',
-                    padding: '1rem 2rem'
-                  }}>Cancel
-                </Button>
+                <div style={{
+                  display: 'flex',
+                  gap: '1rem',
+                  flexDirection: mobileBreakpoint ? 'row-reverse' : 'row',
+                  justifyContent: 'center'
+                }}>
+                  <Button variant="outlined"
+                    fullWidth={mobileBreakpoint}
+                    size="small"
+                    onClick={handleUpdate}
+                    sx={{
+                      color: colors.webWhite,
+                      borderColor: colors.webGreen,
+                      padding: '1rem 2rem'
+                    }}>Update
+                  </Button>
+                  <Button variant="outlined"
+                    fullWidth={mobileBreakpoint}
+                    size="small"
+                    onClick={handleResetFields}
+                    sx={{
+                      color: colors.webWhite,
+                      borderColor: 'red',
+                      padding: '1rem 2rem'
+                    }}>Cancel
+                  </Button>
+                </div>
               </div>
             </div>
           </Fade>
