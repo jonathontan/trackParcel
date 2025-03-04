@@ -31,7 +31,7 @@ function JobPage() {
   const isSelfCollection = job && job.assign_to === 'SELF COLLECT'
   const text = searchParams.get("do_number")
   const [serviceType, setServiceType] = useState<string>("delivery")
-  const [deliveryRemarks, setDeliveryRemarks] = useState<string>(constants.deliveryRemarksList[0])
+  const [deliveryRemarks, setDeliveryRemarks] = useState<string>("")
   const [phoneNumber, setPhoneNumber] = useState<string>("")
 
   useEffect(() => {
@@ -73,7 +73,6 @@ function JobPage() {
   }
 
   const handleServiceTypeButton = () => {
-    console.log('update')
     setUpdateServiceType(true)
   }
 
@@ -90,9 +89,14 @@ function JobPage() {
     setPhoneNumber(value)
   }
 
+  const handleResetFields = () => {
+    setUpdateServiceType(false)
+    setDeliveryRemarks("")
+    setPhoneNumber("")
+  }
+
   const handleUpdate = () => {
     if (phoneNumber === jobPhoneNumber) {
-      console.log('update detrack')
       setUpdateServiceType(false)
       enqueueSnackbar('Updated Successfully.', { variant: 'success' })
     }
@@ -221,9 +225,14 @@ function JobPage() {
                   </Select>
                   {serviceType === "delivery" && (
                     <Select
+                      displayEmpty
                       size="small"
                       value={deliveryRemarks}
                       onChange={handleDeliveryRemarks}
+                      renderValue={() => {
+                        if (deliveryRemarks === "") return "Remarks"
+                        else return deliveryRemarks
+                      }}
                       sx={{
                         color: colors.webWhite,
                         ".MuiOutlinedInput-notchedOutline": {
@@ -235,7 +244,7 @@ function JobPage() {
                       }}
                     >
                       {constants.deliveryRemarksList.map((type: string, i: number) => (
-                        <MenuItem key={i} value={type.toLowerCase()}>{type}</MenuItem>
+                        <MenuItem key={i} value={type}>{type}</MenuItem>
                       ))}
                     </Select>
                   )}
@@ -263,12 +272,23 @@ function JobPage() {
                   ></TextField>
                 </div>
                 <Button variant="outlined"
+                  size="small"
                   onClick={handleUpdate}
                   sx={{
                     color: colors.webWhite,
                     borderColor: colors.webGreen,
                     padding: '1rem 2rem'
-                  }}>Update</Button>
+                  }}>Update
+                </Button>
+                <Button variant="outlined"
+                  size="small"
+                  onClick={handleResetFields}
+                  sx={{
+                    color: colors.webWhite,
+                    borderColor: 'red',
+                    padding: '1rem 2rem'
+                  }}>Cancel
+                </Button>
               </div>
             </div>
           </Fade>
