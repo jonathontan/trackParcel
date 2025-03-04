@@ -15,7 +15,6 @@
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
     "@iconify/react": "^5.0.2",
-    "@import-meta-env/unplugin": "^0.6.0",
     "@mui/material": "^6.1.8",
     "@reduxjs/toolkit": "^2.3.0",
     "notistack": "^3.0.2",

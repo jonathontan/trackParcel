@@ -17,6 +17,7 @@ function MainPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   useEffect(() => {
+    console.log(import.meta.env.VITE_DETRACK_SERVICE)
     dispatch(fetchSheetId()).unwrap().then((res: string) => {
       if (res) {
         dispatch(fetchSheet(res)).unwrap().then((r) => console.log(r))
