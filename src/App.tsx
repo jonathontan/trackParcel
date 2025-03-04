@@ -33,7 +33,7 @@ function App() {
         element: <Navigate to="/" replace />,
       },
     ],
-    { basename: import.meta.env.APP_BASE_URL }
+    { basename: import.meta.env.REACT_APP_BASE_URL }
   )
   return (
     <RouterProvider router={routes} />
