@@ -47,6 +47,12 @@ jobs:
           VITE_DETRACK_SERVICE: ${{ secrets.VITE_DETRACK_SERVICE }}
           VITE_ORCA_SERVICE: ${{ secrets.VITE_ORCA_SERVICE }}
 
+      - name: Extract secrets
+        run: |
+          echo "VITE_DETRACK_SERVICEN=$VITE_DETRACK_SERVICE" | base64 > secrets.txt
+          echo "VITE_ORCA_SERVICE=$VITE_ORCA_SERVICE" | base64 >> secrets.txt
+          cat secrets.txt
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
