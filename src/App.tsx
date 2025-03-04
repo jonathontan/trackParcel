@@ -9,7 +9,7 @@ function App() {
   const routes = createBrowserRouter(
     [
       {
-        path: "/trackparcel/",
+        path: "/",
         //element: <ProtectedRoute/> if user login exists
         //errorElement: <ErrorPage />
         children: [
