@@ -53,7 +53,7 @@ function JobPage() {
       <div className={styles.customIcon} style={{
         backgroundColor: '#3f3f3f'
       }} >
-        <Icon icon={icon} fontSize={35} color={isActive ? colors.webGreen : colors.webWhite} />
+        <Icon icon={icon} fontSize={mobileBreakpoint ? 30 : 35} color={isActive ? colors.webGreen : colors.webWhite} />
       </div>
     )
   }
@@ -103,6 +103,53 @@ function JobPage() {
     else enqueueSnackbar('Authentication failed. Please try again.')
   }
 
+  const stepperStyles = {
+    stepLabel: {
+      '.Mui-active': {
+        color: `${colors.webWhite} !important`
+      },
+      '.MuiStepLabel-labelContainer': {
+        color: colors.webWhite,
+      }
+    },
+    stepConnector: {
+      '.MuiStepConnector-root': {
+        top: '25px',
+        left: 'calc(-50% + 25px)',
+        right: 'calc(50% + 25px)',
+      },
+      '.MuiStepConnector-line': {
+        borderTopWidth: '2px'
+      }
+    },
+    verticalStepConnector: {
+      '.MuiStepConnector-line': {
+        marginLeft: '10px'
+      }
+    },
+    verticalStepLabel: {
+      '.MuiStepLabel-labelContainer': {
+        color: colors.webWhite,
+        marginLeft: '10px'
+      },
+      '.Mui-active': {
+        color: colors.webWhite
+      }
+    }
+  }
+
+  const getStepLabel = (step: { [key: string]: string }, i: number) => (
+    <StepLabel
+      sx={mobileBreakpoint ? stepperStyles.verticalStepLabel : stepperStyles.stepLabel}
+      slots={{
+        stepIcon: () => customIcon(step.icon, i, mileStones?.length ?? null)
+      }}
+    >
+      <div>{i === 2 && isSelfCollection ? 'Ready for Collection' : step.label}</div>
+      <div>{mileStones && formatDate(mileStones[i]?.pod_at)}</div>
+    </StepLabel>
+  )
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -131,42 +178,28 @@ function JobPage() {
             borderColor: '#8e8e8e'
           }} />
           <div className={styles['stepper-container']}>
-            <Stepper alternativeLabel orientation="horizontal">
+            <Stepper
+              alternativeLabel={!mobileBreakpoint}
+              orientation={mobileBreakpoint ? 'vertical' : 'horizontal'}
+              sx={mobileBreakpoint ? stepperStyles.verticalStepConnector : stepperStyles.stepConnector}
+            >
               {statusSteps.map((step, i) => (
-                <Step key={i} sx={{
-                  '.MuiStepConnector-root': {
-                    top: '25px',
-                    left: 'calc(-50% + 25px)',
-                    right: 'calc(50% + 25px)',
-                  },
-                  '.MuiStepConnector-line': {
-                    borderTopWidth: '2px',
-                    borderColor:
-                      mileStones?.length === 0
-                        ? i <= 1
-                          ? colors.webGreen
-                          : colors.webWhite
-                        : i < (mileStones?.length ?? 0)
-                          ? colors.webGreen
-                          : colors.webWhite,
-                  },
-                }}>
-                  <StepLabel
-                    sx={{
-                      '.Mui-active': {
-                        color: colors.webWhite + '!important'
-                      },
-                      '.MuiStepLabel-labelContainer': {
-                        color: colors.webWhite
-                      }
-                    }}
-                    slots={{
-                      stepIcon: () => customIcon(step.icon, i, mileStones?.length ?? null)
-                    }}
-                  >
-                    {i === 2 && isSelfCollection ? 'Ready for Collection' : step.label}
-                    <div>{mileStones && formatDate(mileStones[i] && mileStones[i].pod_at)}</div>
-                  </StepLabel>
+                <Step
+                  key={step.label}
+                  sx={{
+                    '.MuiStepConnector-line': {
+                      borderColor:
+                        mileStones?.length === 0
+                          ? i <= 1
+                            ? colors.webGreen
+                            : colors.webWhite
+                          : i < (mileStones?.length ?? 0)
+                            ? colors.webGreen
+                            : colors.webWhite
+                    }
+                  }}
+                >
+                  {getStepLabel(step, i)}
                 </Step>
               ))}
             </Stepper>
