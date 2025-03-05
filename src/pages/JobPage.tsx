@@ -133,7 +133,7 @@ function JobPage() {
         marginLeft: '10px'
       },
       '.Mui-active': {
-        color: colors.webWhite
+        color: `${colors.webWhite} !important`
       }
     }
   }
