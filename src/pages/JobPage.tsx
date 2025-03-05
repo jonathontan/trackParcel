@@ -208,7 +208,7 @@ function JobPage() {
             )}
           </div>
         </div>
-        {detrackStatus === "at_warehouse" && !updateServiceType && (
+        {(detrackStatus && ["at_warehouse", "dispatched"].includes(detrackStatus)) && !updateServiceType && (
           <Button
             variant="outlined"
             onClick={handleServiceTypeButton}
